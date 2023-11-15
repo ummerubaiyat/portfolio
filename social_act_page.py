@@ -1,6 +1,6 @@
 import streamlit as st
-from st_draggable_list import DraggableList
-from st_clickable_images import clickable_images
+# from st_draggable_list import DraggableList
+# from st_clickable_images import clickable_images
 
 def social_act_page():
 
@@ -30,8 +30,8 @@ def social_act_page():
     ]
 
     # DraggableList for Volunteer Experience
-    slist_volunteer = DraggableList(data_volunteer, width="100%")
-    slist_volunteer  # Just the DraggableList, without st.write
+    # slist_volunteer = DraggableList(data_volunteer, width="100%")
+    # slist_volunteer  # Just the DraggableList, without st.write
 
     def image_gallery():
         st.title("Activities")
