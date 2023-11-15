@@ -1,37 +1,38 @@
 import streamlit as st
-# from st_draggable_list import DraggableList
-# from st_clickable_images import clickable_images
+from st_clickable_images import clickable_images
+from streamlit_sortables import sort_items
+
 
 def social_act_page():
 
     st.title("Leadership Experience")
 
-    # Leadership Experience Data
     data_leadership = [
-        {"id": "oct", "order": 10, "name": "Campus Ambassador (DIU),\n Google Developer Group Sonargaon\n (April 2, 2018 – Dec 30, 2018)"},
-        {"id": "sep", "order": 10, "name": "Vice President,\n DIU Girls Programming Club\n (2017 – 2018)"},
-        {"id": "nov", "order": 11, "name": "Campus Ambassador (DIU), \n BRAC (Urban Innovation Challenge 2016)"},
-        {"id": "dec", "order": 12, "name": "Campus Ambassador (DIU), \n Take Back the Tech Bangladesh \n November 2, 2017, to Dec 30, 2018"},
+        'Campus Ambassador (DIU),\n Google Developer Group Sonargaon\n (April 2, 2018 – Dec 30, 2018)',
+        'Vice President,\n DIU Girls Programming Club\n (2017 – 2018)',
+        'Campus Ambassador (DIU), \n BRAC (Urban Innovation Challenge 2016)',
+        'Campus Ambassador (DIU), \n Take Back the Tech Bangladesh \n November 2, 2017, to Dec 30, 2018',
     ]
 
-    # DraggableList for Leadership Experience
-    # slist_leadership = DraggableList(data_leadership, width="100%")
-    # slist_leadership  # Just the DraggableList, without st.write
+    sorted_data_leadership = sort_items(data_leadership, "")
+    if sorted_data_leadership:
+        pass  # Don't display the reordered list here
 
     st.title("Volunteer Experience")
 
-    # Volunteer Experience Data
     data_volunteer = [
-        {"id": "oct", "order": 10, "name": "Volunteer,\n ICCIT 2014\n"},
-        {"id": "nov", "order": 11, "name": "Volunteer, \n BRAC (Urban Innovation Challenge 2016)"},
-        {"id": "dec", "order": 12, "name": "Volunteer, \n Google Developer Group Sonargaon\n (2016-2019)"},
-        {"id": "jun", "order": 8, "name": "Volunteer, \n Wi-STEM Bangladesh\n (2016-2017)"},
-        {"id": "sep", "order": 9, "name": "Volunteer, \n WEDU Global\n (2017-2020)"},
+        'Volunteer,\n ICCIT 2014\n',
+        'Volunteer, \n BRAC (Urban Innovation Challenge 2016)',
+        'Volunteer, \n Google Developer Group Sonargaon\n (2016-2019)',
+        'Volunteer, \n Wi-STEM Bangladesh\n (2016-2017)',
+        'Volunteer, \n WEDU Global\n (2017-2020)',
     ]
 
-    # DraggableList for Volunteer Experience
-    # slist_volunteer = DraggableList(data_volunteer, width="100%")
-    # slist_volunteer  # Just the DraggableList, without st.write
+    sorted_data_volunteer = sort_items(data_volunteer, "")
+    if sorted_data_volunteer:
+        pass  # Don't display the reordered list here
+
+
 
     def image_gallery():
         st.title("Activities")
