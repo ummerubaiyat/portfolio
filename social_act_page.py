@@ -15,8 +15,8 @@ def social_act_page():
     ]
 
     # DraggableList for Leadership Experience
-    slist_leadership = DraggableList(data_leadership, width="100%")
-    slist_leadership  # Just the DraggableList, without st.write
+    # slist_leadership = DraggableList(data_leadership, width="100%")
+    # slist_leadership  # Just the DraggableList, without st.write
 
     st.title("Volunteer Experience")
 
