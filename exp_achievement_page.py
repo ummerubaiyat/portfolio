@@ -88,7 +88,10 @@ def exp_achievement_page():
             {
                 "name": "Huawei Technologies (Bangladesh) Ltd.",
                 "children": [
-                    {"name": "Solution Engineer", "children": [{"name": "Responsibilities", "children": []},
+                    {"name": "Solution Engineer", "children": [{"name": "Responsibilities", "children": [
+                        {"name": "IP/Datacom Requirement Analysis"},
+                        {"name": "Network Design  "},
+                        {"name": "Documentation Preparation & Presentation "}]},
                                                                {"name": "Duration: December 2023 to Continuing", "collapse": True}]},
                     {"name": "Solution Architect (Cloud)", "children": [{"name": "Responsibilities", "children": [
                         {"name": "Cloud Solutions Design and Development "},
