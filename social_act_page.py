@@ -1,10 +1,7 @@
 import streamlit as st
-from st_clickable_images import clickable_images
 from streamlit_sortables import sort_items
 
-
 def social_act_page():
-
     st.title("Leadership Experience")
 
     data_leadership = [
@@ -14,9 +11,11 @@ def social_act_page():
         'Campus Ambassador (DIU), \n Take Back the Tech Bangladesh \n November 2, 2017, to Dec 30, 2018',
     ]
 
-    sorted_data_leadership = sort_items(data_leadership, "")
-    if sorted_data_leadership:
-        pass  # Don't display the reordered list here
+    # sorted_data_leadership = sort_items(data_leadership, "")
+    
+    # Display sorted items with custom styling
+    for item in data_leadership:
+        st.markdown(f'<div style="background-color: #DB9F92; padding: 10px; margin: 5px;">{item}</div>', unsafe_allow_html=True)
 
     st.title("Volunteer Experience")
 
@@ -28,10 +27,11 @@ def social_act_page():
         'Volunteer, \n WEDU Global\n (2017-2020)',
     ]
 
-    sorted_data_volunteer = sort_items(data_volunteer, "")
-    if sorted_data_volunteer:
-        pass  # Don't display the reordered list here
-
+    # sorted_data_volunteer = sort_items(data_volunteer, "")
+    
+    # Display sorted items with custom styling
+    for item in data_volunteer:
+        st.markdown(f'<div style="background-color:#DB9F92; padding: 10px; margin: 5px;">{item}</div>', unsafe_allow_html=True)
 
 
     def image_gallery():
