@@ -80,12 +80,13 @@ def education_skill_page():
         "Statistical Analysis",
         "Deep Learning",
         "Machine Learning",
-        "PostgreSQL",
+        "SQL",
         "R",
-        "Cloud Computing"
+        "Cloud Computing",
+        "Quantum Computing",
     ]
 
-    skill_scores = [9, 9, 8, 8, 7, 6, 8]  # You can adjust the scores accordingly
+    skill_scores = [9, 9, 8, 8, 7, 6, 8, 2]  # You can adjust the scores accordingly
 
     # Create a radar chart for skills
     radar = go.Figure()
