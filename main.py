@@ -1,6 +1,4 @@
 import streamlit as st
-from PIL import Image, ImageDraw
-import io
 from streamlit_lottie import st_lottie
 import requests
 from education_skill_page import education_skill_page
@@ -9,28 +7,7 @@ from projects_pub_page import projects_pub_page
 from social_act_page import social_act_page
 from st_clickable_images import clickable_images
 
-# Function to create a circular image
-def create_circular_image(image_path, size):
-    """
-    Create a circular image from the provided image path.
-
-    Parameters:
-    - image_path (str): Path to the image file.
-    - size (int): Size of the circular image.
-
-    Returns:
-    - io.BytesIO: Circular image data as bytes.
-    """
-    image = Image.open(image_path)
-    size = min(image.size)
-    image = image.crop((0, 0, size, size))
-    circular_mask = Image.new("L", (size, size), 0)
-    ImageDraw.Draw(circular_mask).ellipse((0, 0, size, size), fill=255)
-    circular_image = Image.new("RGBA", (size, size))
-    circular_image.paste(image, mask=circular_mask)
-    circular_image_bytes = io.BytesIO()
-    circular_image.save(circular_image_bytes, format="PNG")
-    return circular_image_bytes
+st.set_page_config(page_title="Umme Rubaiyat Chowdhury", page_icon="💁‍♀️", layout="centered")
 
 # Page content for the Home tab
 def home_page():
@@ -83,7 +60,7 @@ def home_page():
         # Add the name with a large fantasy font
         st.header("Umme Rubaiyat Chowdhury")
         # Add your position with a briefcase emoji
-        st.markdown(":briefcase:  Solution Engineer")
+        st.markdown(":briefcase:  DataCom Solution Engineer")
         # Add the company with a company emoji
         st.markdown(":office:  Huawei Technologies (Bangladesh) Ltd. ")
         # Add your email with an email emoji
@@ -94,26 +71,9 @@ def home_page():
         image_size = 200  # Adjust the size as needed
         # Load the image using PIL
         image_url = "https://i.imgur.com/4Wv0P4y.jpg"
-        image = Image.open(requests.get(image_url, stream=True).raw)
+        # Display the circular image with CSS
+        st.markdown(f'<img src="{image_url}" style="width: {image_size}px; border-radius: 50%;" />', unsafe_allow_html=True)
 
-        # Ensure the image is square
-        size = min(image.size)
-        image = image.crop((0, 0, size, size))
-
-        # Create a circular mask
-        circular_mask = Image.new("L", (size, size), 0)
-        ImageDraw.Draw(circular_mask).ellipse((0, 0, size, size), fill=255)
-
-        # Apply the circular mask to the image
-        circular_image = Image.new("RGBA", (size, size))
-        circular_image.paste(image, mask=circular_mask)
-
-        # Convert the circular image to bytes with a transparent background
-        circular_image_bytes = io.BytesIO()
-        circular_image.save(circular_image_bytes, format="PNG")
-
-        # Display the circular image with the fixed size
-        st.image(circular_image_bytes, width=image_size)
 
     # Create a layout with one row for the second row
     row2 = st.columns((3, 1))  # Specify the width ratios here (3 for three-thirds, 1 for one-third)
