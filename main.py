@@ -60,7 +60,7 @@ def home_page():
         # Add the name with a large fantasy font
         st.header("Umme Rubaiyat Chowdhury")
         # Add your position with a briefcase emoji
-        st.markdown(":briefcase:  Data Analyst (Big Data)")
+        st.markdown(":briefcase:  Data Analyst")
         # Add the company with a company emoji
         st.markdown(":office:  Huawei Technologies (Bangladesh) Ltd. ")
         # Add your email with an email emoji
