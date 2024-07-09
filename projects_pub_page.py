@@ -3,7 +3,6 @@ from pyecharts import options as opts
 from pyecharts.charts import Graph
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-from streamlit_card import card
 from streamlit_lottie import st_lottie
 
 # Define lottie_research outside of functions
@@ -64,49 +63,55 @@ def projects_pub_page():
     def my_on_click():
         st.write("")
 
-    # Create a 2x2 grid layout
+    # Create a 2x2 grid layout for project videos
     col1, col2 = st.columns(2)
 
-    # Row 1
     with col1:
-        # Project 1
-        card(
-            title="Arannya Bengali Browser",
-            text="Speech Corpus enabled Bengali Web Browser",
-            image="https://ct.kidgovernor.org/wp-content/uploads/2018/09/youtube-logo-hd-8-1024x768.png",
-            url="https://www.youtube.com/watch?v=OCxz-BOBHQ8",
-            on_click=default_on_click,  # Set default on_click function
+        st.video("https://www.youtube.com/watch?v=OCxz-BOBHQ8")
+        st.markdown(
+            """
+            <div class="project-description">
+            **Arannya Bengali Browser**  
+            A speech corpus-enabled Bengali web browser designed to enhance accessibility and user experience for Bengali speakers. Features include voice commands and a unique user interface tailored to the Bengali language.
+            </div>
+            """,
+            unsafe_allow_html=True
         )
 
     with col2:
-        # Project 2
-        card(
-            title="Computer Vision Based Street Width Measurement for Urban Aesthetics Identification",
-            text="",
-            image="https://ct.kidgovernor.org/wp-content/uploads/2018/09/youtube-logo-hd-8-1024x768.png",
-            url="https://www.youtube.com/watch?v=Ds8k-aPHVKk",
-            on_click=default_on_click,  # Set default on_click function
+        st.video("https://www.youtube.com/watch?v=Ds8k-aPHVKk")
+        st.markdown(
+            """
+            <div class="project-description">
+            **Computer Vision-Based Street Width Measurement for Urban Aesthetics Identification**  
+            It is a system that utilizes computer vision techniques to measure street width as a metric for urban aesthetics. The methodology involved capturing images with a digital camera, preprocessing through scaling resolution, object identification via contour tracing and canny edge detection algorithms, and pixel mapping generalization for measurement. The results were compared with standard street measurements to analyze the aesthetics of Dhaka city streets.
+            </div>
+            """,
+            unsafe_allow_html=True
         )
 
-    # Row 2
     with col1:
-        # Project 3
-        card(
-            title="JustTune.AI",
-            text="Text to Music Generator",
-            image="https://scontent.fdac8-1.fna.fbcdn.net/v/t39.30808-6/391652127_3760221387597786_4925828799259193627_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=DctP4SGN_S4AX9Cb31d&_nc_ht=scontent.fdac8-1.fna&oh=00_AfCSHr4-9UCQfcD1iF2RNiAuFiLup0tO8B5edsj3-yTyiw&oe=65566D9E",
-            url="https://youtu.be/Cqcx3R3xZxs?si=NY5wd5zdMt4pdRwx",
-            on_click=default_on_click,  # Set default on-click function
+        st.video("https://youtu.be/Cqcx3R3xZxs?si=NY5wd5zdMt4pdRwx")
+        st.markdown(
+            """
+            <div class="project-description">
+            **JustTune.AI**  
+            A text-to-music generator that converts written text into musical compositions. This project leverages natural language processing and deep learning to create personalized music based on user inputs.
+            </div>
+            """,
+            unsafe_allow_html=True
         )
 
     with col2:
-        # Project 4
-        card(
-            title="Github",
-            text="ummerubaiyat",
-            image="https://repository-images.githubusercontent.com/326435405/9affba00-777d-11eb-9c52-806cbc107892",
-            url="https://github.com/ummerubaiyat",
-            on_click=default_on_click,  # Set default on-click function
+        st.image("https://repository-images.githubusercontent.com/326435405/9affba00-777d-11eb-9c52-806cbc107892", use_column_width=True)
+        st.markdown(
+            """
+            <div class="project-description">
+            **Github**  
+            [ummerubaiyat's GitHub profile](https://github.com/ummerubaiyat)
+            </div>
+            """,
+            unsafe_allow_html=True
         )
 
     # Publications Section
@@ -165,15 +170,40 @@ def projects_pub_page():
 
     css = '''
     <style>
+        .stMarkdownContainer {
+            margin: 20px 0;
+        }
+        .project-description {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 1.1rem;
+            text-align: justify;
+        }
         .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
             font-size: 2rem;
             font-family: Georgia, serif;
             text-align: justify;
+        }
+        :root {
+            --primary-color: #ddd;
+            --background-color: #f9f9f9;
+            --text-color: #000;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #444;
+                --background-color: #333;
+                --text-color: #fff;
+            }
         }
     </style>
     '''
     
     st.markdown(css, unsafe_allow_html=True)
 
-# Call the function in your projects_pub_page to display the Research Interest word cloud, project cards, and publications
+# Call the function in your projects_pub_page to display the Research Interest word cloud, project videos, and publications
 projects_pub_page()
