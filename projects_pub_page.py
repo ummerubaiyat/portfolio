@@ -58,50 +58,87 @@ def projects_pub_page():
     # Display the word cloud and Lottie animation
     generate_word_cloud(data)
 
-    st.title("Projects")
+    st.title("Notable Projects")
 
     def my_on_click():
         st.write("")
 
     # Create a 2x2 grid layout for project videos
     col1, col2 = st.columns(2)
-
     with col1:
-        st.video("https://www.youtube.com/watch?v=OCxz-BOBHQ8")
         st.markdown(
-            """
-            <div class="project-description">
-            **Arannya Bengali Browser**  
-            A speech corpus-enabled Bengali web browser designed to enhance accessibility and user experience for Bengali speakers. Features include voice commands and a unique user interface tailored to the Bengali language.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with col2:
-        st.video("https://www.youtube.com/watch?v=Ds8k-aPHVKk")
-        st.markdown(
-            """
-            <div class="project-description">
-            **Computer Vision-Based Street Width Measurement for Urban Aesthetics Identification**  
-            It is a system that utilizes computer vision techniques to measure street width as a metric for urban aesthetics. The methodology involved capturing images with a digital camera, preprocessing through scaling resolution, object identification via contour tracing and canny edge detection algorithms, and pixel mapping generalization for measurement. The results were compared with standard street measurements to analyze the aesthetics of Dhaka city streets.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
+        """
+        <div class="project-description">
+            <strong>Identifying Economically Backward Countries in accordance with the Multi-Dimensional Poverty Index using Unsupervised Machine Learning</strong><br>
+            <em>Thesis Project, Department of Statistics and Data Science, Jahangirnagar University</em><br>
+            <strong>Role:</strong> Lead Researcher<br>
+            <strong>Duration:</strong> June 2022 – December 2022<br><br>
+            The project aimed to classify countries by socio-economic and health indicators to uncover economic disparities. I started with <strong>K-Means clustering</strong> but noted significant overlap between clusters, leading to the integration of the <strong>Multidimensional Poverty Index (MPI)</strong> for enhanced analysis. To address multicollinearity, I performed <strong>Variance Inflation Factor (VIF)</strong> analysis and condition number checks, removing problematic variables to reduce numerical instability. The model was refined using <strong>Principal Component Analysis (PCA)</strong> and regularization techniques like <strong>Ridge</strong> and <strong>Lasso</strong> to retain key features and minimize redundancy. <strong>Weighted Least Squares (WLS)</strong> regression was applied to manage heteroscedasticity, while <strong>DBSCAN</strong> was used to handle outliers and preserve critical anomalies. <strong>Gaussian Mixture Models (GMM)</strong> validated clusters by identifying normally distributed subpopulations. The final analysis identified common countries across K-Means, DBSCAN, and GMM results, providing a robust basis for actionable, data-driven recommendations for fund allocation.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+        
     with col1:
         st.video("https://youtu.be/Cqcx3R3xZxs?si=NY5wd5zdMt4pdRwx")
         st.markdown(
-            """
-            <div class="project-description">
-            **JustTune.AI**  
-            A text-to-music generator that converts written text into musical compositions. This project leverages natural language processing and deep learning to create personalized music based on user inputs.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
+        """
+        <div class="project-description">
+            <strong>JustTune.AI — AI-Driven Music Generation, Spectrogram Analysis, and MIDI Conversion</strong><br>
+            <strong>Role:</strong> AI Engineer<br>
+            <strong>Duration:</strong> October 2023<br><br>
+            The <strong>JustTune.AI</strong> project merges cutting-edge AI and audio processing technologies to create music, analyze spectrograms, and convert audio to MIDI. Leveraging <strong>MusicGen (AudioCraft — Facebook)</strong>, I generated music from user text prompts, adjusting parameters like sampling temperature and CFG coefficients. The resulting audio was processed with <strong>librosa</strong> for spectrogram visualization, utilizing Short-Time Fourier Transform (STFT) for detailed frequency analysis. Pitch detection was executed using <strong>aubio</strong>, with notes mapped to MIDI events and managed via <strong>mido</strong>. This solution facilitates a smooth transition from music generation to MIDI export, ideal for real-time composition and sound engineering.<br><br>
+            <strong>Tools & Techniques:</strong> MusicGen (AudioCraft — Facebook), librosa, aubio, mido, Python
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    with col1:
+        st.markdown(
+        """
+        <div class="project-description">
+            <strong>Sonar Bangla — Krishok Bondhu</strong><br>
+            <strong>Role:</strong> Android Developer<br>
+            <strong>Achievement:</strong> 2nd Runner-up, National Hackathon - 2016<br>
+            <strong>Duration:</strong> 6 - 7 April, 2016<br><br>
+            The <strong>Sonar Bangla — Krishok Bondhu</strong> project aimed to support Bangladeshi farmers by providing an Android mobile application that facilitates access to agricultural experts, market prices, and the latest updates on agricultural innovations. The app featured voice assistance for ease of use and conducted surveys based on data stored on a server. As part of the development team, I focused on image-based detection and classification of plant diseases, leveraging <strong>TensorFlow</strong> for its powerful machine learning capabilities, which were essential for analyzing plant diseases from live images. Additionally, I contributed to the development of user-friendly surveys, designing and preparing questionnaires to enable data collection and analysis, ultimately enhancing the app's capacity to support the agricultural community.<br><br>
+            <strong>Tools & Techniques:</strong> Java, Retrofit, TensorFlow, OpenCV, SQLite
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+   
+    with col2:
+        st.video("https://www.youtube.com/watch?v=Ds8k-aPHVKk")
+        st.markdown(
+        """
+        <div class="project-description">
+            <strong>Computer Vision-based Street-width Measurement for Urban Aesthetics Identification</strong><br>
+            <em>Thesis Project, Department of Computer Science and Engineering, Daffodil International University</em><br>
+            <strong>Role:</strong> Lead Researcher<br>
+            <strong>November, 2017 – July, 2018</strong><br><br>
+            This project aimed to accurately measure road widths from 2D images using advanced image processing techniques. I utilized <strong>OpenCV</strong> for image acquisition, capturing road images from various distances. Image preprocessing included downscaling for computational efficiency and grayscale filtering. <strong>Canny edge detection</strong> was employed to delineate object boundaries, while morphological operations like erosion and dilation closed gaps in edge lines. Pixel-to-object mapping was calibrated with a reference object to ensure precise width measurement.To classify road conditions, real data from Dhaka city was analyzed using <strong>Naive Bayes</strong>, categorizing road widths based on predefined thresholds. Despite challenges with calibration, camera angles, and manual capture, the project achieved a 96% accuracy rate. This low-cost solution for urban road analysis sets the stage for future advancements from 2D to 3D image analysis.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    with col2:
+        st.video("https://www.youtube.com/watch?v=OCxz-BOBHQ8")
+        st.markdown(
+        """
+        <div class="project-description">
+            <strong>Arannya Bengali Web Browser</strong><br>
+            <em>Achievement: DIU Innovation Award - Daffodil ICT Carnival 2018</em><br>
+            <strong>Role:</strong> Software Developer<br>
+            <strong>Duration:</strong> August 2017 – February 2018<br><br>
+            The <strong>Arannya Bengali Web Browser</strong> was designed to enhance web accessibility for low-literacy users in Bangladesh, enabling navigation through voice commands in Bengali. Developed initially in <strong>VB.NET</strong>, the project faced limitations with the WebBrowser Control’s outdated Internet Explorer rendering engine. To resolve this, I integrated the <strong>Chromium Browser Engine</strong>, ensuring full support for modern web standards like HTML5, CSS3, and JavaScript. For voice recognition, I utilized <strong>Microsoft SAPI</strong> to process Bengali commands. Addressing challenges with tone detection and native Bengali phonetics, I advanced the project by developing an acoustic language model with <strong>CMUSphinx</strong>, significantly improving the browser’s responsiveness to native Bengali speech patterns.<br><br>
+            <strong>Tools & Techniques:</strong> VB.NET, Chromium Browser Engine, Microsoft SAPI, CMUSphinx
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+        
     with col2:
         st.image("https://repository-images.githubusercontent.com/326435405/9affba00-777d-11eb-9c52-806cbc107892", use_column_width=True)
         st.markdown(
@@ -113,6 +150,7 @@ def projects_pub_page():
             """,
             unsafe_allow_html=True
         )
+
 
     # Publications Section
     st.title("Publications")
