@@ -33,7 +33,7 @@ def generate_word_cloud(data):
     st.pyplot(fig)
 
 def projects_pub_page():
-    st.title("Research Interest")
+    st.title("Research Interests")
 
     data = [
         "Machine Learning",
